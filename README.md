@@ -8,22 +8,22 @@ This repository contains "everything-as-code" configuration for all Terraform mo
 ## What exactly is managed here?
 
 1. GitHub resources:
-  - Repositories
-  - Branch protections (status checks, pull-request reviews, restrictions)
-  - Teams
-  - Team repositories
-  - Team memberships
-  - Organization memberships (admins and members)
+    - Repositories
+    - Branch protections (status checks, pull-request reviews, restrictions)
+    - Teams
+    - Team repositories
+    - Team memberships
+    - Organization memberships (admins and members)
 
 2. todo - Common files in GitHub repositories:
-  - .pre-commit-hooks.yml
-  - .github issues and PR templates
-  - CODEOWNERS
-  - Makefile
-  - GitHub Actions
-  - LICENSE
-  - README.md
-  - ...
+    - .pre-commit-hooks.yml
+    - .github issues and PR templates
+    - CODEOWNERS
+    - Makefile
+    - GitHub Actions
+    - LICENSE
+    - README.md
+    - ...
 
 
 ## Why here and not in each individual repository?
