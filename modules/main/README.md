@@ -1,6 +1,6 @@
 # GitHub resources
 
-Configuration of all Github resources (repositories, teams, memberships, etc).
+Configuration of all Github resources (repositories, teams, memberships, etc) is managed by this module.
 
 ## Usage
 
@@ -25,7 +25,6 @@ $ terraform apply
 |------|-------------|------|---------|:-----:|
 | admins | List of admin usernames | `list(string)` | `[]` | no |
 | branch\_protections | Map of team memberships to manage | `map(map(any))` | `{}` | no |
-| github\_organization | Github organization to manage | `string` | n/a | yes |
 | members | List of member usernames | `list(string)` | `[]` | no |
 | repositories | Map of repositories to manage | `map(any)` | `{}` | no |
 | team\_memberships | Map of team memberships to manage | `map(map(string))` | `{}` | no |

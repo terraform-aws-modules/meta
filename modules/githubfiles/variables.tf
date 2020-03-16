@@ -1,5 +1,5 @@
 variable "repository" {
-  description = "Owner/name"
+  description = "Repository owner/name"
   type        = string
 }
 
@@ -23,12 +23,6 @@ variable "static_files" {
 
 variable "dynamic_files" {
   description = "Map of dynamic files to manage in repo (generated from templates)"
-  type        = map(any)
-  default     = {}
-}
-
-variable "extra_static_files" {
-  description = "Map of static files to manage in just this repo"
   type        = map(any)
   default     = {}
 }

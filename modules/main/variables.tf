@@ -9,10 +9,10 @@ variable "teams" {
   type        = any
   default     = {}
 
-//  validation {
-//    condition     = ! contains([for v in var.teams : contains(["secret", "closed"], lookup(v, "privacy", "secret"))], false)
-//    error_message = "The teams privacy should be only 'secret' or 'closed'. Default is 'secret'."
-//  }
+  //  validation {
+  //    condition     = ! contains([for v in var.teams : contains(["secret", "closed"], lookup(v, "privacy", "secret"))], false)
+  //    error_message = "The teams privacy should be only 'secret' or 'closed'. Default is 'secret'."
+  //  }
 
 }
 variable "team_memberships" {
