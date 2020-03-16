@@ -1,6 +1,6 @@
 # GitHub resources
 
-Configuration of all Github resources is placed here.
+Configuration of all Github resources (repositories, teams, memberships, etc).
 
 ## Usage
 

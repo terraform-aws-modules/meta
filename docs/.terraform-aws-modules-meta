@@ -1,0 +1,25 @@
+# Meta data for this module:
+terraform-meta:
+----
+
+Repo and meta.
+
+Meta repo contains master info about files to maintain in the repo.
+
+Repo specifies:
+  1. version of meta repo to use (master).
+  2. which files to not render from meta
+  3. which files to render only within this repo (not overwrite)
+
+Repo contains:
+  1. Everything like now (Terraform code, examples)
+  2. Data files:
+    - README.yml in any folder
+  3.
+
+GH action triggers on data-files change (eg, README.yml) which open a PR to master branch with regenerated files changed (README.md)
+
+## To-do
+
+- [ ] Manage static files in repos with `githubfile`
+- [ ] Put real repos and generate limited github token

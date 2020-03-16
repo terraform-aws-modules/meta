@@ -1,8 +1,3 @@
-variable "github_organization" {
-  description = "Github organization to manage"
-  type        = string
-}
-
 variable "repositories" {
   description = "Map of repositories to manage"
   type        = map(any)
@@ -14,13 +9,12 @@ variable "teams" {
   type        = any
   default     = {}
 
-  validation {
-    condition     = ! contains([for v in var.teams : contains(["secret", "closed"], lookup(v, "privacy", "secret"))], false)
-    error_message = "The teams privacy should be only 'secret' or 'closed'. Default is 'secret'."
-  }
+//  validation {
+//    condition     = ! contains([for v in var.teams : contains(["secret", "closed"], lookup(v, "privacy", "secret"))], false)
+//    error_message = "The teams privacy should be only 'secret' or 'closed'. Default is 'secret'."
+//  }
 
 }
-
 variable "team_memberships" {
   description = "Map of team memberships to manage"
   type        = map(map(string))

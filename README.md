@@ -1,8 +1,6 @@
 # Meta-configurations for [terraform-aws-modules organization](https://github.com/terraform-aws-modules)
 
-## WIP! WIP! WIP! WIP! WIP! WIP! WIP! WIP! WIP! WIP!
-
-This repository contains "everything-as-code" configuration for all Terraform modules managed as part of [terraform-aws-modules](https://github.com/terraform-aws-modules) organization on GitHub.
+This repository contains Terraform configurations for all Terraform modules managed as part of [terraform-aws-modules](https://github.com/terraform-aws-modules) organization on GitHub.
 
 
 ## What exactly is managed here?
@@ -46,12 +44,41 @@ If you are using Mac, you can install all dependencies using Homebrew:
 
     $ brew install terraform terraform-docs pre-commit
 
-Additionally, environment variable `GITHUB_TOKEN` should be set for the GitHub organization you manage.
+Additionally, environment variable `GITHUB_TOKEN` should be set for the GitHub organization you manage (`terraform-aws-modules`).
+
+## How to run this?
+
+Prepare environment variables:
+
+    $ export GITHUB_TOKEN="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
+Manage all together (slowest):
+
+    $ cd github
+    $ terragrunt plan-all    # <- it is a good idea to see changes :)
+    $ terragrunt apply-all
+
+Only repositories and teams permissions:
+
+    $ cd github/main-github
+    $ terragrunt apply
+
+Manage files in all repositories:
+
+    $ cd github/repositories
+    $ terragrunt plan-all    # <- it is a good idea to see changes :)
+    $ terragrunt apply-all
+
+Only files in one repository (eg, `terraform-aws-modules/terraform-aws-vpc`:
+
+    $ cd github/repositories/terraform-aws-modules/terraform-aws-vpc
+    $ terragrunt apply
 
 
 ## Ideas for later
 
 - Use [SecretHub](https://www.secrethub.io/) for storing secret Github Token
+- Rotate GitHub Token ([example 1](https://gist.github.com/StevenACoffman/f0c084b428977430d2baacd0263c3563))
 - Consider adding MFA
 - Prevent making changes in files managed by this repo in repositories (tell users during PR checks)
 
