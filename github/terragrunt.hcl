@@ -3,6 +3,7 @@ terraform {
     commands = get_terraform_commands_that_need_vars()
 
     env_vars = {
+      GITHUB_TOKEN        = trimspace(run_cmd("--terragrunt-quiet", "secrethub", "read", "betajob/terraform-aws-modules/github/token"))
       GITHUB_ORGANIZATION = "terraform-aws-modules"
     }
   }

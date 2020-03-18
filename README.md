@@ -72,8 +72,7 @@ Currently it is not well implemented here yet. Due to a large amount of API call
 
 ## Ideas for later
 
-- [ ] Use [SecretHub](https://www.secrethub.io/) for storing secret Github Token
-- [ ] Rotate GitHub Token ([example 1](https://gist.github.com/StevenACoffman/f0c084b428977430d2baacd0263c3563))
+- [x] Use [SecretHub](https://www.secrethub.io/) for storing secret Github Token
 - [ ] Prevent making changes in files managed by this repo in repositories (tell users during PR checks)
 - [ ] Finish running code in this repo - `terraform-aws-modules/terraform-aws-eks`
 - [ ] Verify if GitHub is actually using the files in "ISSUE_TEMPLATE" directory from `.github` repository. Verify and update if necessary.

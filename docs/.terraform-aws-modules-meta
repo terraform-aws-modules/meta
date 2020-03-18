@@ -26,13 +26,3 @@ GH action triggers on data-files change (eg, README.yml) which open a PR to mast
 No need to add `delete_repo` scope.
 
 * terraform-aws-modules/meta (repo, admin:org) - 17.3.2020
-
-
-## Helper commands
-
-Import existing resources:
-
-terragrunt import "github_repository.this[\"terraform-aws-sns\"]" terraform-aws-sns
-
-# Optional imports (may not exist):
-terragrunt import "github_branch_protection.this[\"terraform-aws-sns/master\"]" "terraform-aws-sns:master"
