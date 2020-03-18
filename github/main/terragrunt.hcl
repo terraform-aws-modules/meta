@@ -226,7 +226,7 @@ inputs = {
 
   # Team/Repository = {pull, triage, push, maintain, admin}
   team_repositories = {
-    "aws-eks/terraform-aws-eks" = "push"
+    "aws-eks/terraform-aws-eks" = "admin"
   }
 
   # Role = {member, maintainer}
