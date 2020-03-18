@@ -6,10 +6,6 @@ include {
   path = find_in_parent_folders()
 }
 
-dependencies {
-  paths = ["../../../main"]
-}
-
 inputs = {
 
   static_files = {

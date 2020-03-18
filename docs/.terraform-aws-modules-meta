@@ -21,11 +21,6 @@ GH action triggers on data-files change (eg, README.yml) which open a PR to mast
 
 ## To-do
 
-- [x] Manage static files in repos with `githubfile`
-- [x] Put real repos and generate limited github token
-- [ ] Run on this repo - `terraform-aws-modules/terraform-aws-eks`
-- [ ] Not sure if GitHub is actually using the files in "ISSUE_TEMPLATE" directory from .github repository. Verify and update if necessary.
-
 ## GH token scope - https://github.com/settings/tokens/new
 
 No need to add `delete_repo` scope.
