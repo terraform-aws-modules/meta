@@ -28,39 +28,42 @@ This repository contains Terraform configurations for all Terraform modules mana
 
 It is hard to keep things identical, predictable, and with high-quality, while focusing on maintaining Terraform modules.
 
-Individual Terraform modules repository should contain only Terraform configurations and have standard procedures for releasing, updating, testing, documenting defined in a central place (this repo!)
+GitHub allows to have a special repository named [.github](https://github.com/terraform-aws-modules/.github) where common files like `CODE_OF_CONDUCT.md`, `CONTRIBUTING.md`, `FUNDING.yml`, `PULL_REQUEST_TEMPLATE.md` and `SECURITY.md` are stored. Those files are automatically used by all repositories across the whole GitHub organization.
+
+Ideally, individual Terraform module repository should contain only Terraform configurations and have standard procedures for releasing, updating, testing, documenting, defined in a central place (this repo).
 
 
 ## Pre-requirements
 
-- [Terraform 0.12](https://github.com/hashicorp/terraform)
+- [Terraform 0.12+](https://github.com/hashicorp/terraform)
+- [Terragrunt 0.23+](https://terragrunt.gruntwork.io/)
 - [Terraform Docs](https://github.com/segmentio/terraform-docs)
 - [pre-commit hooks](http://pre-commit.com)
-
-- Custom Terraform providers (you need to install it yourself):
-  - [githubfile](https://github.com/form3tech-oss/terraform-provider-githubfile)
+- [githubfile](https://github.com/form3tech-oss/terraform-provider-githubfile) Terraform provider (compile and install manually)
 
 If you are using Mac, you can install all dependencies using Homebrew:
 
-    $ brew install terraform terraform-docs pre-commit
+    $ brew install terraform terragrunt terraform-docs pre-commit
 
-Additionally, environment variable `GITHUB_TOKEN` should be set for the GitHub organization you manage (`terraform-aws-modules`).
 
-## How to run this?
+## 🔒 GitHub Token 
 
-Prepare environment variables:
+GitHub Personal Access Token is stored using [SecretHub.io](https://secrethub.io/) and populated during execution by Terragrunt.
 
-    $ export GITHUB_TOKEN="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+Give [SecretHub.io](https://secrethub.io/) a try if you are tired of struggling with secrets already. Remember to mention that you have read about it here. :)
+
 
 ### Manage GitHub resources (repositories, teams, members):
 
     $ cd github/main
     $ terragrunt apply
 
+
 ### Manage files in one repository (eg, `terraform-aws-modules/terraform-aws-vpc`):
 
     $ cd github/repositories/terraform-aws-modules/terraform-aws-vpc
     $ terragrunt apply
+
 
 ### Manage files in all repositories (not supported):
 
@@ -69,6 +72,7 @@ Currently it is not well implemented here yet. Due to a large amount of API call
     $ cd github/repositories
     $ terragrunt plan-all    # <- it is a good idea to see changes :)
     $ terragrunt apply-all
+
 
 ## Ideas for later
 
