@@ -1,7 +1,7 @@
 locals {
   /* Useful helpers */
-  list_cmd = [ for k in keys(var.repositories) : "mkdir \"${k}\"" ]
-  full_cmd = join("\n", local.list_cmd)
+  list_cmd   = [for k in keys(var.repositories) : "mkdir \"${k}\""]
+  full_cmd   = join("\n", local.list_cmd)
   full_repos = join("\n", keys(var.repositories))
 }
 
