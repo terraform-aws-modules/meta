@@ -25,7 +25,7 @@ $ terraform apply
 |------|-------------|------|---------|:-----:|
 | branch | Branch name | `string` | `""` | no |
 | dynamic\_files | Map of dynamic files to manage in repo (generated from templates) | `map(any)` | `{}` | no |
-| files\_dir | Files directory (relative to this module) | `string` | `"files/"` | no |
+| files\_dir | Path to files directory | `string` | n/a | yes |
 | repository | Repository owner/name | `string` | n/a | yes |
 | static\_files | Map of static files to manage in repo | `map(any)` | `{}` | no |
 

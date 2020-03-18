@@ -1,18 +1,32 @@
+locals {
+  /* Useful helpers */
+  list_cmd = [ for k in keys(var.repositories) : "mkdir \"${k}\"" ]
+  full_cmd = join("\n", local.list_cmd)
+  full_repos = join("\n", keys(var.repositories))
+}
+
 ###############
 # Repositories
 ###############
 resource "github_repository" "this" {
   for_each = var.repositories
 
-  name        = each.key
-  description = lookup(each.value, "description", null)
-
-  private   = lookup(each.value, "private", false)
-  auto_init = true # set to true to be able to manage branch protection as code automaticaly
+  name          = each.key
+  description   = lookup(each.value, "description", null)
+  homepage_url  = lookup(each.value, "homepage_url", null)
+  private       = lookup(each.value, "private", false)
+  has_issues    = lookup(each.value, "has_issues", true)
+  has_projects  = lookup(each.value, "has_projects", false)
+  has_wiki      = lookup(each.value, "has_wiki", false)
+  has_downloads = lookup(each.value, "has_downloads", true)
 
   allow_squash_merge = lookup(each.value, "allow_squash_merge", true)
+  allow_merge_commit = lookup(each.value, "allow_merge_commit", true)
+  allow_rebase_merge = lookup(each.value, "allow_rebase_merge", true)
 
-  topics = lookup(each.value, "topics", null)
+  auto_init = lookup(each.value, "auto_init", true) # set to true to be able to manage branch protection as code automaticaly
+
+  topics = sort(lookup(each.value, "topics", []))
 }
 
 #####################

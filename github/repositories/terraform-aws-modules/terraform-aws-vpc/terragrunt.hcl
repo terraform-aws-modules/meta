@@ -16,15 +16,7 @@ locals {
 
 inputs = {
 
-  static_files = merge(
-    local.common_vars.inputs.static_files,
-    {
-
-      # ignore some files, for example
-      ".editorconfig" = null
-
-    }
-  )
+  static_files = local.common_vars.inputs.static_files
 
   ##############################
   # DO NOT EDIT BELOW THIS LINE

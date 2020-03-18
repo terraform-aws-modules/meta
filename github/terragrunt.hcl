@@ -3,7 +3,7 @@ terraform {
     commands = get_terraform_commands_that_need_vars()
 
     env_vars = {
-      GITHUB_ORGANIZATION = "terraform-modules"
+      GITHUB_ORGANIZATION = "terraform-aws-modules"
     }
   }
 
@@ -41,9 +41,9 @@ generate "main_providers" {
 provider "github" {}
 
 provider "githubfile" {
-  github_username = "antonbabenko"
-  github_email    = "anton@antonbabenko.com"
-  # commit_message_prefix = "[ci skip] "
+  github_username = "betajobot"
+  github_email    = "anton+betajobot@antonbabenko.com"
+  commit_message_prefix = "[ci skip] "
 }
 EOF
 }

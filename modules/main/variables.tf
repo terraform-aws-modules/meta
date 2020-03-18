@@ -1,6 +1,6 @@
 variable "repositories" {
   description = "Map of repositories to manage"
-  type        = map(any)
+  type        = any
   default     = {}
 }
 

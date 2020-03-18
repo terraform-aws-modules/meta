@@ -6,7 +6,7 @@ resource "github_team" "this" {
 
   name        = each.key
   description = lookup(each.value, "description", null)
-  privacy     = lookup(each.value, "privacy", null)
+  privacy     = lookup(each.value, "privacy", "secret")
 }
 
 ###################

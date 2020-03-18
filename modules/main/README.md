@@ -26,7 +26,7 @@ $ terraform apply
 | admins | List of admin usernames | `list(string)` | `[]` | no |
 | branch\_protections | Map of team memberships to manage | `map(map(any))` | `{}` | no |
 | members | List of member usernames | `list(string)` | `[]` | no |
-| repositories | Map of repositories to manage | `map(any)` | `{}` | no |
+| repositories | Map of repositories to manage | `any` | `{}` | no |
 | team\_memberships | Map of team memberships to manage | `map(map(string))` | `{}` | no |
 | team\_repositories | Map of team repositories to manage | `map(string)` | `{}` | no |
 | teams | Map of teams to manage | `any` | `{}` | no |

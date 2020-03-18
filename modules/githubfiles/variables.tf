@@ -1,3 +1,8 @@
+variable "files_dir" {
+  description = "Path to files directory"
+  type        = string
+}
+
 variable "repository" {
   description = "Repository owner/name"
   type        = string
@@ -7,12 +12,6 @@ variable "branch" {
   description = "Branch name"
   type        = string
   default     = ""
-}
-
-variable "files_dir" {
-  description = "Files directory (relative to this module)"
-  type        = string
-  default     = "files/"
 }
 
 variable "static_files" {

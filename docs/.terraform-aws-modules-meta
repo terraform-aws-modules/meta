@@ -21,5 +21,23 @@ GH action triggers on data-files change (eg, README.yml) which open a PR to mast
 
 ## To-do
 
-- [ ] Manage static files in repos with `githubfile`
-- [ ] Put real repos and generate limited github token
+- [x] Manage static files in repos with `githubfile`
+- [x] Put real repos and generate limited github token
+- [ ] Run on this repo - `terraform-aws-modules/terraform-aws-eks`
+- [ ] Not sure if GitHub is actually using the files in "ISSUE_TEMPLATE" directory from .github repository. Verify and update if necessary.
+
+## GH token scope - https://github.com/settings/tokens/new
+
+No need to add `delete_repo` scope.
+
+* terraform-aws-modules/meta (repo, admin:org) - 17.3.2020
+
+
+## Helper commands
+
+Import existing resources:
+
+terragrunt import "github_repository.this[\"terraform-aws-sns\"]" terraform-aws-sns
+
+# Optional imports (may not exist):
+terragrunt import "github_branch_protection.this[\"terraform-aws-sns/master\"]" "terraform-aws-sns:master"
