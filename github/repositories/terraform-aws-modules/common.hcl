@@ -28,5 +28,10 @@ inputs = {
       dest = "Makefile"
     }
 
+    ".chglog/CHANGELOG.tpl.md" = {
+      src  = ".chglog/CHANGELOG.tpl.md"
+      dest = ".chglog/CHANGELOG.tpl.md"
+    }
+
   }
 }

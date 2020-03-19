@@ -17,9 +17,10 @@ inputs = {
     {
 
       # ignore some files, for example
-      ".gitignore"              = null
-      ".pre-commit-config.yaml" = null
-      "Makefile"                = null
+      ".gitignore"               = null
+      ".pre-commit-config.yaml"  = null
+      "Makefile"                 = null
+      ".chglog/CHANGELOG.tpl.md" = null # See issue about CHANGELOG - https://github.com/terraform-aws-modules/meta/issues/3
 
     }
   )
