@@ -33,7 +33,7 @@ variable "branch_protections" {
   description = "Map of team memberships to manage"
 
   // key = team-name/repo-name
-  type    = map(map(any))
+  type    = any
   default = {}
 }
 
