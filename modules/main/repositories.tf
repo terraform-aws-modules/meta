@@ -21,10 +21,10 @@ resource "github_repository" "this" {
   has_downloads = lookup(each.value, "has_downloads", true)
 
   allow_squash_merge = lookup(each.value, "allow_squash_merge", true)
-  allow_merge_commit = lookup(each.value, "allow_merge_commit", true)
-  allow_rebase_merge = lookup(each.value, "allow_rebase_merge", true)
+  allow_merge_commit = lookup(each.value, "allow_merge_commit", true) # merge commits are required for githubfile Terraform provider only (not for humans)
+  allow_rebase_merge = lookup(each.value, "allow_rebase_merge", false)
 
-  auto_init = lookup(each.value, "auto_init", true) # set to true to be able to manage branch protection as code automaticaly
+  auto_init = lookup(each.value, "auto_init", false) # set to true to be able to manage branch protection as code automaticaly when creating a repo
 
   topics = sort(lookup(each.value, "topics", []))
 }
@@ -41,21 +41,33 @@ resource "github_branch_protection" "this" {
   enforce_admins         = lookup(each.value, "enforce_admins", false)
   require_signed_commits = lookup(each.value, "require_signed_commits", false)
 
-  required_status_checks {
-    strict   = lookup(each.value, "required_status_checks_strict", null)
-    contexts = lookup(each.value, "required_status_checks_context", null)
+  dynamic "required_status_checks" {
+    for_each = [lookup(each.value, "required_status_checks", {})]
+
+    content {
+      strict   = lookup(required_status_checks.value, "strict", true)
+      contexts = lookup(required_status_checks.value, "contexts", [])
+    }
   }
 
-  required_pull_request_reviews {
-    dismiss_stale_reviews           = lookup(each.value, "required_pull_request_reviews_dismiss_stale_reviews", false)
-    dismissal_users                 = lookup(each.value, "required_pull_request_reviews_dismissal_users", null)
-    dismissal_teams                 = lookup(each.value, "required_pull_request_reviews_dismissal_teams", null)
-    require_code_owner_reviews      = lookup(each.value, "required_pull_request_reviews_require_code_owner_reviews", false)
-    required_approving_review_count = lookup(each.value, "required_pull_request_reviews_required_approving_review_count", null)
+  dynamic "required_pull_request_reviews" {
+    for_each = [lookup(each.value, "required_pull_request_reviews", {})]
+
+    content {
+      dismiss_stale_reviews           = lookup(required_pull_request_reviews.value, "dismiss_stale_reviews", false)
+      dismissal_users                 = lookup(required_pull_request_reviews.value, "dismissal_users", null)
+      dismissal_teams                 = lookup(required_pull_request_reviews.value, "dismissal_teams", null)
+      require_code_owner_reviews      = lookup(required_pull_request_reviews.value, "require_code_owner_reviews", false)
+      required_approving_review_count = lookup(required_pull_request_reviews.value, "required_approving_review_count", null)
+    }
   }
 
-  restrictions {
-    users = lookup(each.value, "restrictions_users", null)
-    teams = lookup(each.value, "restrictions_teams", null)
+  dynamic "restrictions" {
+    for_each = length(keys(lookup(each.value, "restrictions", {}))) == 0 ? [] : [lookup(each.value, "restrictions", {})]
+
+    content {
+      users = lookup(restrictions.value, "users", null)
+      teams = lookup(restrictions.value, "teams", null)
+    }
   }
 }
