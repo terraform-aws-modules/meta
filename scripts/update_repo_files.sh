@@ -5,7 +5,11 @@ set -e # do exit on bad exit code
 # Locate the directory in which this script is located
 readonly SCRIPT_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+# This dir
 readonly GITHUB_REPOS_DIR="${SCRIPT_PATH}/../github/repositories"
+
+# Local copy
+#readonly GITHUB_REPOS_DIR="${SCRIPT_PATH}/../../.."
 
 pushd "$GITHUB_REPOS_DIR" > /dev/null
 
@@ -13,6 +17,8 @@ pushd "$GITHUB_REPOS_DIR" > /dev/null
 #dirs=($(find * -mindepth 1 -maxdepth 1 -type d -path "terraform-aws-modules/*" | sort))
 
 dirs=(
+terraform-aws-modules/.github
+terraform-aws-modules/meta
 terraform-aws-modules/terraform-aws-acm
 terraform-aws-modules/terraform-aws-alb
 terraform-aws-modules/terraform-aws-atlantis
@@ -46,7 +52,10 @@ for dir in "${dirs[@]}"; do
 
   echo "$dir"
 
-  terragrunt apply
+  # Remove remaining branches after githubfile's PRs were closed
+#  git branch -r | awk -F/ '/\/terraform-provider-githubfile-/{print $2}' | xargs -I {} git push origin --delete {}
+
+    terragrunt apply
 
   popd > /dev/null
 
