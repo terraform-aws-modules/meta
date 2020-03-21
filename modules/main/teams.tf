@@ -15,10 +15,9 @@ resource "github_team" "this" {
 resource "github_team_membership" "this" {
   for_each = var.team_memberships
 
-  team_id = github_team.this[each.value.team].id
-
-  username = each.key
-  role     = lookup(each.value, "role", "member")
+  team_id  = github_team.this[split("/", each.key)[0]].id
+  username = split("/", each.key)[1]
+  role     = each.value
 }
 
 ####################

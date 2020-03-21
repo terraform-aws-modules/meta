@@ -17,7 +17,7 @@ variable "teams" {
 }
 variable "team_memberships" {
   description = "Map of team memberships to manage"
-  type        = map(map(string))
+  type        = map(string)
   default     = {}
 }
 

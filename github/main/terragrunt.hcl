@@ -73,6 +73,12 @@ inputs = {
       topics       = ["aws", "aws-vpn", "terraform-module"]
     }
 
+    terraform-aws-dynamodb-table = {
+      description  = "Terraform module which creates DynamoDB table on AWS"
+      homepage_url = "https://registry.terraform.io/modules/terraform-aws-modules/dynamodb-table/aws"
+      topics       = ["aws", "dynamodb", "terraform-module"]
+    }
+
     terraform-aws-ebs-optimized = {
       description  = "Terraform module to determine if an instance can be flagged for EBS optimization"
       homepage_url = "https://registry.terraform.io/modules/terraform-aws-modules/ebs-optimized/aws"
@@ -221,6 +227,7 @@ inputs = {
     "terraform-aws-autoscaling/master"      = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-cloudwatch/master"       = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-customer-gateway/master" = local.branch_protections["terraform-aws-*/master"]
+    "terraform-aws-dynamodb-table/master"   = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-ebs-optimized/master"    = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-ec2-instance/master"     = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-ecs/master"              = local.branch_protections["terraform-aws-*/master"]
@@ -251,25 +258,22 @@ inputs = {
     aws-eks = {
       privacy = "closed"
     }
+    aws-dynamodb-table = {
+      privacy = "closed"
+    }
   }
 
   # Team/Repository = {pull, triage, push, maintain, admin}
   team_repositories = {
-    "aws-eks/terraform-aws-eks" = "admin"
+    "aws-eks/terraform-aws-eks"                       = "admin"
+    "aws-dynamodb-table/terraform-aws-dynamodb-table" = "admin"
   }
 
   # Role = {member, maintainer}
   team_memberships = {
-    barryib = {
-      team = "aws-eks"
-      role = "member"
-    }
-
-    max-rocket-internet = {
-      team = "aws-eks"
-      role = "member"
-    }
-
+    "aws-eks/barryib"                        = "member"
+    "aws-eks/max-rocket-internet"            = "member"
+    "aws-dynamodb-table/max-rocket-internet" = "member"
   }
 
   members = [
