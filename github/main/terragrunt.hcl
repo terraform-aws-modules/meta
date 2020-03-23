@@ -280,7 +280,8 @@ inputs = {
     "barryib",
     "max-rocket-internet",
     "brandonjbjelland",
-    "bryantbiggs"
+    "bryantbiggs",
+    "dpiddockcmp",
   ]
 
   admins = ["antonbabenko"]
