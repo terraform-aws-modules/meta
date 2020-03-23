@@ -7,8 +7,16 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.3.0"></a>
+## [v0.3.0] - 2020-03-23
+
+- feat: Added dpiddockcmp to members
+- Added terraform-aws-dynamodb-table repo, team, roles
+- chore: Added command to remove terraform-provider-githubfile branches after crash (closes [#10](https://github.com/terraform-aws-modules/meta/issues/10))
+
+
 <a name="v0.2.0"></a>
-## [v0.2.0] - 0001-01-01
+## [v0.2.0] - 2020-03-19
 
 
 
@@ -30,5 +38,6 @@ All notable changes to this project will be documented in this file.
 - Initial commit
 
 
-[Unreleased]: https://github.com/terraform-aws-modules/meta/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/terraform-aws-modules/meta/compare/v0.3.0...HEAD
+[v0.3.0]: https://github.com/terraform-aws-modules/meta/compare/v0.2.0...v0.3.0
 [v0.2.0]: https://github.com/terraform-aws-modules/meta/compare/v0.1.0...v0.2.0
