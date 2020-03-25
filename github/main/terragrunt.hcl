@@ -64,7 +64,7 @@ inputs = {
     terraform-aws-cloudwatch = {
       description  = "Terraform module which creates Cloudwatch resources on AWS"
       homepage_url = "https://registry.terraform.io/modules/terraform-aws-modules/cloudwatch/aws"
-      topics       = ["aws", "cloudwatch", "cloudwatch-logs", "cloudwatch-alarms", "aws-cloudwatch", "cloudwatch-metrics", "terraform-module"]
+      topics       = ["aws", "cis-benchmarks", "cloudwatch", "cloudwatch-logs", "cloudwatch-alarms", "aws-cloudwatch", "cloudwatch-metrics", "terraform-module"]
     }
 
     terraform-aws-customer-gateway = {
