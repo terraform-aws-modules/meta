@@ -282,6 +282,8 @@ inputs = {
     "brandonjbjelland",
     "bryantbiggs",
     "dpiddockcmp",
+    "dpiddockcmp",
+    "DrFaust92",
   ]
 
   admins = ["antonbabenko"]
