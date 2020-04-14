@@ -7,6 +7,13 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.5.0"></a>
+## [v0.5.0] - 2020-03-25
+
+- feat: Added cis-benchmarks as topic for terraform-aws-cloudwatch repo
+- feat: Add Stale Bot support into .github repo ([#14](https://github.com/terraform-aws-modules/meta/issues/14))
+
+
 <a name="v0.4.0"></a>
 ## [v0.4.0] - 2020-03-25
 
@@ -44,7 +51,8 @@ All notable changes to this project will be documented in this file.
 - Initial commit
 
 
-[Unreleased]: https://github.com/terraform-aws-modules/meta/compare/v0.4.0...HEAD
+[Unreleased]: https://github.com/terraform-aws-modules/meta/compare/v0.5.0...HEAD
+[v0.5.0]: https://github.com/terraform-aws-modules/meta/compare/v0.4.0...v0.5.0
 [v0.4.0]: https://github.com/terraform-aws-modules/meta/compare/v0.3.0...v0.4.0
 [v0.3.0]: https://github.com/terraform-aws-modules/meta/compare/v0.2.0...v0.3.0
 [v0.2.0]: https://github.com/terraform-aws-modules/meta/compare/v0.1.0...v0.2.0
