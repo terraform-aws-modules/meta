@@ -50,6 +50,11 @@ inputs = {
       dest = "ISSUE_TEMPLATE/config.yml"
     }
 
+    "stale.yml" = {
+      src  = "stale.yml"
+      dest = "stale.yml"
+    }
+
   }
 
   ##############################
