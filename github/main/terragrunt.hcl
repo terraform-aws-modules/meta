@@ -273,6 +273,7 @@ inputs = {
   team_memberships = {
     "aws-eks/barryib"                        = "member"
     "aws-eks/max-rocket-internet"            = "member"
+    "aws-eks/dpiddockcmp"                    = "member"
     "aws-dynamodb-table/max-rocket-internet" = "member"
   }
 
