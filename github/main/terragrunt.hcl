@@ -121,6 +121,12 @@ inputs = {
       topics       = ["aws", "aws-ec2", "ec2-key-pair", "key-pair", "terraform-module"]
     }
 
+    terraform-aws-lambda = {
+      description  = "Terraform module which creates AWS Lambda resources"
+      homepage_url = "https://registry.terraform.io/modules/terraform-aws-modules/lambda/aws"
+      topics       = ["aws", "aws-lambda", "serverless", "terraform-serverless", "terraform-module"]
+    }
+
     terraform-aws-notify-slack = {
       description  = "Terraform module which creates SNS topic and Lambda function which sends notifications to Slack"
       homepage_url = "https://registry.terraform.io/modules/terraform-aws-modules/notify-slack/aws"
@@ -234,6 +240,7 @@ inputs = {
     "terraform-aws-elb/master"              = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-iam/master"              = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-key-pair/master"         = local.branch_protections["terraform-aws-*/master"]
+    "terraform-aws-lambda/master"           = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-notify-slack/master"     = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-rds/master"              = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-rds-aurora/master"       = local.branch_protections["terraform-aws-*/master"]
