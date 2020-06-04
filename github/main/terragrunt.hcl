@@ -122,7 +122,7 @@ inputs = {
     }
 
     terraform-aws-lambda = {
-      description  = "Terraform module which creates AWS Lambda resources"
+      description  = "Terraform module, which builds dependencies and packages, and also creates AWS Lambda resources in countless combinations"
       homepage_url = "https://registry.terraform.io/modules/terraform-aws-modules/lambda/aws"
       topics       = ["aws", "aws-lambda", "serverless", "terraform-serverless", "terraform-module"]
     }
