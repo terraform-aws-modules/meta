@@ -49,6 +49,12 @@ inputs = {
       topics       = ["aws", "application-load-balancer", "alb", "network-load-balancer", "nlb", "terraform-module"]
     }
 
+    terraform-aws-apigateway-v2 = {
+      description  = "Terraform module to create an AWS API Gateway v2 (HTTP/WebSocket)"
+      homepage_url = "https://registry.terraform.io/modules/terraform-aws-modules/apigateway-v2/aws"
+      topics       = ["aws", "aws-apigateway", "serverless", "terraform-serverless", "terraform-module"]
+    }
+
     terraform-aws-atlantis = {
       description  = "Terraform configurations for running Atlantis on AWS Fargate. Github, Gitlab and BitBucket are supported"
       homepage_url = "https://registry.terraform.io/modules/terraform-aws-modules/atlantis/aws"
