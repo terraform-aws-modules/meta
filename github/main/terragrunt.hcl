@@ -128,7 +128,7 @@ inputs = {
     }
 
     terraform-aws-lambda = {
-      description  = "Terraform module, which builds dependencies and packages, and also creates AWS Lambda resources in countless combinations"
+      description  = "Terraform module, which takes care of a lot of AWS Lambda/serverless tasks (build dependencies, packages, updates, deployments) in countless combinations"
       homepage_url = "https://registry.terraform.io/modules/terraform-aws-modules/lambda/aws"
       topics       = ["aws", "aws-lambda", "serverless", "terraform-serverless", "terraform-module"]
     }
@@ -235,6 +235,7 @@ inputs = {
     // All repos are having the same requirements
     "terraform-aws-acm/master"              = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-alb/master"              = local.branch_protections["terraform-aws-*/master"]
+    "terraform-aws-apigateway-v2/master"    = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-atlantis/master"         = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-autoscaling/master"      = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-cloudwatch/master"       = local.branch_protections["terraform-aws-*/master"]
@@ -274,12 +275,45 @@ inputs = {
     aws-dynamodb-table = {
       privacy = "closed"
     }
+    triage-supporters = {
+      privacy = "closed"
+    }
   }
 
   # Team/Repository = {pull, triage, push, maintain, admin}
   team_repositories = {
     "aws-eks/terraform-aws-eks"                       = "admin"
     "aws-dynamodb-table/terraform-aws-dynamodb-table" = "admin"
+
+    "triage-supporters/terraform-aws-acm"              = "triage"
+    "triage-supporters/terraform-aws-alb"              = "triage"
+    "triage-supporters/terraform-aws-apigateway-v2"    = "triage"
+    "triage-supporters/terraform-aws-atlantis"         = "triage"
+    "triage-supporters/terraform-aws-autoscaling"      = "triage"
+    "triage-supporters/terraform-aws-cloudwatch"       = "triage"
+    "triage-supporters/terraform-aws-customer-gateway" = "triage"
+    "triage-supporters/terraform-aws-dynamodb-table"   = "triage"
+    "triage-supporters/terraform-aws-ebs-optimized"    = "triage"
+    "triage-supporters/terraform-aws-ec2-instance"     = "triage"
+    "triage-supporters/terraform-aws-ecs"              = "triage"
+    "triage-supporters/terraform-aws-elb"              = "triage"
+    "triage-supporters/terraform-aws-eks"              = "triage"
+    "triage-supporters/terraform-aws-iam"              = "triage"
+    "triage-supporters/terraform-aws-key-pair"         = "triage"
+    "triage-supporters/terraform-aws-lambda"           = "triage"
+    "triage-supporters/terraform-aws-notify-slack"     = "triage"
+    "triage-supporters/terraform-aws-rds"              = "triage"
+    "triage-supporters/terraform-aws-rds-aurora"       = "triage"
+    "triage-supporters/terraform-aws-redshift"         = "triage"
+    "triage-supporters/terraform-aws-s3-bucket"        = "triage"
+    "triage-supporters/terraform-aws-s3-object"        = "triage"
+    "triage-supporters/terraform-aws-security-group"   = "triage"
+    "triage-supporters/terraform-aws-sns"              = "triage"
+    "triage-supporters/terraform-aws-sqs"              = "triage"
+    "triage-supporters/terraform-aws-transit-gateway"  = "triage"
+    "triage-supporters/terraform-aws-vpc"              = "triage"
+    "triage-supporters/terraform-aws-vpn-gateway"      = "triage"
+    "triage-supporters/meta"                           = "triage"
   }
 
   # Role = {member, maintainer}
@@ -288,6 +322,13 @@ inputs = {
     "aws-eks/max-rocket-internet"            = "member"
     "aws-eks/dpiddockcmp"                    = "member"
     "aws-dynamodb-table/max-rocket-internet" = "member"
+
+    "triage-supporters/barryib"             = "member"
+    "triage-supporters/max-rocket-internet" = "member"
+    "triage-supporters/brandonjbjelland"    = "member"
+    "triage-supporters/bryantbiggs"         = "member"
+    "triage-supporters/dpiddockcmp"         = "member"
+    "triage-supporters/DrFaust92"           = "member"
   }
 
   members = [

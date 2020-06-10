@@ -13,6 +13,13 @@ $ terraform apply
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Requirements
+
+| Name | Version |
+|------|---------|
+| terraform | ~> 0.12.23 |
+| github | ~> 2.4 |
+
 ## Providers
 
 | Name | Version |
@@ -22,7 +29,7 @@ $ terraform apply
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:-----:|
+|------|-------------|------|---------|:--------:|
 | admins | List of admin usernames | `list(string)` | `[]` | no |
 | branch\_protections | Map of team memberships to manage | `any` | `{}` | no |
 | members | List of member usernames | `list(string)` | `[]` | no |
