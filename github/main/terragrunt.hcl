@@ -157,6 +157,12 @@ inputs = {
       topics       = ["aws", "redshift", "redshift-cluster", "terraform-module"]
     }
 
+    terraform-aws-route53 = {
+      description  = "Terraform module which creates Route53 resources on AWS"
+      homepage_url = "https://registry.terraform.io/modules/terraform-aws-modules/route53/aws"
+      topics       = ["aws", "route53", "dns", "terraform-module"]
+    }
+
     terraform-aws-s3-bucket = {
       description  = "Terraform module which creates S3 bucket resources on AWS"
       homepage_url = "https://registry.terraform.io/modules/terraform-aws-modules/s3-bucket/aws"
@@ -252,6 +258,7 @@ inputs = {
     "terraform-aws-rds/master"              = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-rds-aurora/master"       = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-redshift/master"         = local.branch_protections["terraform-aws-*/master"]
+    "terraform-aws-route53/master"          = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-s3-bucket/master"        = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-s3-object/master"        = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-security-group/master"   = local.branch_protections["terraform-aws-*/master"]
@@ -305,6 +312,7 @@ inputs = {
     "triage-supporters/terraform-aws-rds"              = "triage"
     "triage-supporters/terraform-aws-rds-aurora"       = "triage"
     "triage-supporters/terraform-aws-redshift"         = "triage"
+    "triage-supporters/terraform-aws-route53"          = "triage"
     "triage-supporters/terraform-aws-s3-bucket"        = "triage"
     "triage-supporters/terraform-aws-s3-object"        = "triage"
     "triage-supporters/terraform-aws-security-group"   = "triage"
