@@ -41,10 +41,11 @@ generate "main_providers" {
   contents  = <<EOF
 provider "github" {}
 
-provider "githubfile" {
-  github_username = "betajobot"
-  github_email    = "anton+betajobot@antonbabenko.com"
-  commit_message_prefix = "[ci skip] "
-}
+// githubfile provider is not available in the registry, yet
+//provider "githubfile" {
+//  github_username = "betajobot"
+//  github_email    = "anton+betajobot@antonbabenko.com"
+//  commit_message_prefix = "[ci skip] "
+//}
 EOF
 }

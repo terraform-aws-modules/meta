@@ -17,14 +17,11 @@ $ terraform apply
 
 | Name | Version |
 |------|---------|
-| terraform | ~> 0.12.23 |
-| githubfile | ~> 1.1 |
+| terraform | >= 0.12.23, < 0.14 |
 
 ## Providers
 
-| Name | Version |
-|------|---------|
-| githubfile | ~> 1.1 |
+No provider.
 
 ## Inputs
 

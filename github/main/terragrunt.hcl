@@ -55,6 +55,12 @@ inputs = {
       topics       = ["aws", "aws-apigateway", "serverless", "terraform-serverless", "terraform-module"]
     }
 
+    terraform-aws-appsync = {
+      description  = "Terraform module to create AWS AppSync resources"
+      homepage_url = "https://registry.terraform.io/modules/terraform-aws-modules/appsync/aws"
+      topics       = ["aws", "aws-appsync", "graphql", "appsync", "serverless", "terraform-serverless", "terraform-module"]
+    }
+
     terraform-aws-atlantis = {
       description  = "Terraform configurations for running Atlantis on AWS Fargate. Github, Gitlab and BitBucket are supported"
       homepage_url = "https://registry.terraform.io/modules/terraform-aws-modules/atlantis/aws"
@@ -242,6 +248,7 @@ inputs = {
     "terraform-aws-acm/master"              = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-alb/master"              = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-apigateway-v2/master"    = local.branch_protections["terraform-aws-*/master"]
+    "terraform-aws-appsync/master"          = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-atlantis/master"         = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-autoscaling/master"      = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-cloudwatch/master"       = local.branch_protections["terraform-aws-*/master"]
@@ -295,6 +302,7 @@ inputs = {
     "triage-supporters/terraform-aws-acm"              = "triage"
     "triage-supporters/terraform-aws-alb"              = "triage"
     "triage-supporters/terraform-aws-apigateway-v2"    = "triage"
+    "triage-supporters/terraform-aws-appsync"          = "triage"
     "triage-supporters/terraform-aws-atlantis"         = "triage"
     "triage-supporters/terraform-aws-autoscaling"      = "triage"
     "triage-supporters/terraform-aws-cloudwatch"       = "triage"
