@@ -73,6 +73,12 @@ inputs = {
       topics       = ["aws", "autoscaling-groups", "autoscaling", "aws-autoscaling", "terraform-module"]
     }
 
+    terraform-aws-cloudfront = {
+      description  = "Terraform module which creates CloudFront resources on AWS"
+      homepage_url = "https://registry.terraform.io/modules/terraform-aws-modules/cloudfront/aws"
+      topics       = ["aws", "cloudfront", "aws-cloudfront", "terraform-module"]
+    }
+
     terraform-aws-cloudwatch = {
       description  = "Terraform module which creates Cloudwatch resources on AWS"
       homepage_url = "https://registry.terraform.io/modules/terraform-aws-modules/cloudwatch/aws"
@@ -251,6 +257,7 @@ inputs = {
     "terraform-aws-appsync/master"          = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-atlantis/master"         = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-autoscaling/master"      = local.branch_protections["terraform-aws-*/master"]
+    "terraform-aws-cloudfront/master"       = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-cloudwatch/master"       = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-customer-gateway/master" = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-dynamodb-table/master"   = local.branch_protections["terraform-aws-*/master"]
@@ -305,6 +312,7 @@ inputs = {
     "triage-supporters/terraform-aws-appsync"          = "triage"
     "triage-supporters/terraform-aws-atlantis"         = "triage"
     "triage-supporters/terraform-aws-autoscaling"      = "triage"
+    "triage-supporters/terraform-aws-cloudfront"       = "triage"
     "triage-supporters/terraform-aws-cloudwatch"       = "triage"
     "triage-supporters/terraform-aws-customer-gateway" = "triage"
     "triage-supporters/terraform-aws-dynamodb-table"   = "triage"
