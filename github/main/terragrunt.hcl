@@ -344,14 +344,14 @@ inputs = {
   team_memberships = {
     "aws-eks/barryib"                        = "member"
     "aws-eks/max-rocket-internet"            = "member"
-    "aws-eks/dpiddockcmp"                    = "member"
+    "aws-eks/dpiddock"                       = "member"
     "aws-dynamodb-table/max-rocket-internet" = "member"
 
     "triage-supporters/barryib"             = "member"
     "triage-supporters/max-rocket-internet" = "member"
     "triage-supporters/brandonjbjelland"    = "member"
     "triage-supporters/bryantbiggs"         = "member"
-    "triage-supporters/dpiddockcmp"         = "member"
+    "triage-supporters/dpiddock"            = "member"
     "triage-supporters/DrFaust92"           = "member"
   }
 
@@ -360,7 +360,7 @@ inputs = {
     "max-rocket-internet",
     "brandonjbjelland",
     "bryantbiggs",
-    "dpiddockcmp",
+    "dpiddock",
     "DrFaust92",
   ]
 
