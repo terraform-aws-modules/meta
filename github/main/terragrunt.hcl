@@ -205,9 +205,9 @@ inputs = {
       topics       = ["aws", "sqs", "aws-sqs", "terraform-module"]
     }
 
-    terraform-aws-step-function = {
-      description  = "Terraform module which creates Step Function resources on AWS"
-      homepage_url = "https://registry.terraform.io/modules/terraform-aws-modules/step-function/aws"
+    terraform-aws-step-functions = {
+      description  = "Terraform module which creates Step Functions on AWS"
+      homepage_url = "https://registry.terraform.io/modules/terraform-aws-modules/step-functions/aws"
       topics       = ["aws", "aws-lambda", "aws-step-function", "serverless", "terraform-serverless", "terraform-module"]
     }
 
@@ -284,7 +284,7 @@ inputs = {
     "terraform-aws-security-group/master"   = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-sns/master"              = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-sqs/master"              = local.branch_protections["terraform-aws-*/master"]
-    "terraform-aws-step-function/master"    = local.branch_protections["terraform-aws-*/master"]
+    "terraform-aws-step-functions/master"   = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-transit-gateway/master"  = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-vpc/master"              = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-vpn-gateway/master"      = local.branch_protections["terraform-aws-*/master"]
@@ -341,7 +341,7 @@ inputs = {
     "triage-supporters/terraform-aws-security-group"   = "triage"
     "triage-supporters/terraform-aws-sns"              = "triage"
     "triage-supporters/terraform-aws-sqs"              = "triage"
-    "triage-supporters/terraform-aws-step-function"    = "triage"
+    "triage-supporters/terraform-aws-step-functions"   = "triage"
     "triage-supporters/terraform-aws-transit-gateway"  = "triage"
     "triage-supporters/terraform-aws-vpc"              = "triage"
     "triage-supporters/terraform-aws-vpn-gateway"      = "triage"
