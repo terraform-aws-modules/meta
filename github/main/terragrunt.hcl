@@ -208,7 +208,7 @@ inputs = {
     terraform-aws-step-functions = {
       description  = "Terraform module which creates Step Functions on AWS"
       homepage_url = "https://registry.terraform.io/modules/terraform-aws-modules/step-functions/aws"
-      topics       = ["aws", "aws-lambda", "aws-step-function", "serverless", "terraform-serverless", "terraform-module"]
+      topics       = ["aws", "aws-lambda", "aws-step-functions", "serverless", "terraform-serverless", "terraform-module"]
     }
 
     terraform-aws-transit-gateway = {
