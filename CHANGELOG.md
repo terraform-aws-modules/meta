@@ -7,6 +7,19 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.7.0"></a>
+## [v0.7.0] - 2021-01-21
+
+- feat: Added terraform-aws-pricing repo ([#22](https://github.com/terraform-aws-modules/meta/issues/22))
+- Fixed topic for step-functions repo
+- Renaming repo from step-function to step-functions
+- feat: Added terraform-aws-step-function repo ([#21](https://github.com/terraform-aws-modules/meta/issues/21))
+- docs: Added notes from today's Office Hour
+- feat: Rename dpiddockcmp ([#17](https://github.com/terraform-aws-modules/meta/issues/17))
+- Added terraform-aws-cloudfront module
+- Added AppSync module and hide githubfile provider
+
+
 <a name="v0.6.0"></a>
 ## [v0.6.0] - 2020-06-17
 
@@ -64,7 +77,8 @@ All notable changes to this project will be documented in this file.
 - Initial commit
 
 
-[Unreleased]: https://github.com/terraform-aws-modules/meta/compare/v0.6.0...HEAD
+[Unreleased]: https://github.com/terraform-aws-modules/meta/compare/v0.7.0...HEAD
+[v0.7.0]: https://github.com/terraform-aws-modules/meta/compare/v0.6.0...v0.7.0
 [v0.6.0]: https://github.com/terraform-aws-modules/meta/compare/v0.5.0...v0.6.0
 [v0.5.0]: https://github.com/terraform-aws-modules/meta/compare/v0.4.0...v0.5.0
 [v0.4.0]: https://github.com/terraform-aws-modules/meta/compare/v0.3.0...v0.4.0
