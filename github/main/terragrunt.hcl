@@ -151,6 +151,12 @@ inputs = {
       topics       = ["aws", "aws-lambda", "aws-cloudwatch", "slack", "terraform-module"]
     }
 
+    terraform-aws-pricing = {
+      description  = "Terraform module which calculates price of AWS infrastructure (from Terraform state and plan)"
+      homepage_url = "https://registry.terraform.io/modules/terraform-aws-modules/pricing/aws"
+      topics       = ["aws", "pricing", "aws-pricing", "aws-pricing-api", "aws-pricing-terraform", "terraform-cost-estimation", "cost-estimation", "terraform-module"]
+    }
+
     terraform-aws-rds = {
       description  = "Terraform module which creates RDS resources on AWS"
       homepage_url = "https://registry.terraform.io/modules/terraform-aws-modules/rds/aws"
@@ -275,6 +281,7 @@ inputs = {
     "terraform-aws-key-pair/master"         = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-lambda/master"           = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-notify-slack/master"     = local.branch_protections["terraform-aws-*/master"]
+    "terraform-aws-pricing/master"          = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-rds/master"              = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-rds-aurora/master"       = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-redshift/master"         = local.branch_protections["terraform-aws-*/master"]
@@ -332,6 +339,7 @@ inputs = {
     "triage-supporters/terraform-aws-key-pair"         = "triage"
     "triage-supporters/terraform-aws-lambda"           = "triage"
     "triage-supporters/terraform-aws-notify-slack"     = "triage"
+    "triage-supporters/terraform-aws-pricing"          = "triage"
     "triage-supporters/terraform-aws-rds"              = "triage"
     "triage-supporters/terraform-aws-rds-aurora"       = "triage"
     "triage-supporters/terraform-aws-redshift"         = "triage"

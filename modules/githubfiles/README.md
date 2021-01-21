@@ -17,7 +17,7 @@ $ terraform apply
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.12.23, < 0.14 |
+| terraform | >= 0.12.23 |
 
 ## Providers
 
