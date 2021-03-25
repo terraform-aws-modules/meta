@@ -187,12 +187,6 @@ inputs = {
       topics       = ["aws", "aws-s3", "s3", "terraform-module"]
     }
 
-    terraform-aws-s3-object = {
-      description  = "Terraform module which creates S3 object resources on AWS"
-      homepage_url = "https://registry.terraform.io/modules/terraform-aws-modules/s3-object/aws"
-      topics       = ["aws", "s3", "aws-s3", "terraform-module"]
-    }
-
     terraform-aws-security-group = {
       description  = "Terraform module which creates EC2-VPC security groups on AWS"
       homepage_url = "https://registry.terraform.io/modules/terraform-aws-modules/security-group/aws"
@@ -287,7 +281,6 @@ inputs = {
     "terraform-aws-redshift/master"         = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-route53/master"          = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-s3-bucket/master"        = local.branch_protections["terraform-aws-*/master"]
-    "terraform-aws-s3-object/master"        = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-security-group/master"   = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-sns/master"              = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-sqs/master"              = local.branch_protections["terraform-aws-*/master"]
@@ -345,7 +338,6 @@ inputs = {
     "triage-supporters/terraform-aws-redshift"         = "triage"
     "triage-supporters/terraform-aws-route53"          = "triage"
     "triage-supporters/terraform-aws-s3-bucket"        = "triage"
-    "triage-supporters/terraform-aws-s3-object"        = "triage"
     "triage-supporters/terraform-aws-security-group"   = "triage"
     "triage-supporters/terraform-aws-sns"              = "triage"
     "triage-supporters/terraform-aws-sqs"              = "triage"
@@ -369,6 +361,7 @@ inputs = {
     "triage-supporters/bryantbiggs"         = "member"
     "triage-supporters/dpiddock"            = "member"
     "triage-supporters/DrFaust92"           = "member"
+    "triage-supporters/tfhartmann"          = "member"
   }
 
   members = [
@@ -378,6 +371,7 @@ inputs = {
     "bryantbiggs",
     "dpiddock",
     "DrFaust92",
+    "tfhartmann",
   ]
 
   admins = ["antonbabenko"]
