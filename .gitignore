@@ -4,6 +4,9 @@
 *.tfstate*
 crash.log
 
+# Terraform lockfile
+.terraform.lock.hcl
+
 # Secrets are not allowed in general
 *.key
 *.pem

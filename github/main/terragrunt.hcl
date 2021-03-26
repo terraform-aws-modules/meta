@@ -127,6 +127,12 @@ inputs = {
       topics       = ["aws", "elb", "aws-elb", "terraform-module"]
     }
 
+    terraform-aws-eventbridge = {
+      description  = "Terraform module which creates EventBridge resources on AWS"
+      homepage_url = "https://registry.terraform.io/modules/terraform-aws-modules/eventbridge/aws"
+      topics       = ["aws", "eventbridge", "serverless", "terraform-serverless", "terraform-module"]
+    }
+
     terraform-aws-iam = {
       description  = "Terraform module which creates IAM resources on AWS"
       homepage_url = "https://registry.terraform.io/modules/terraform-aws-modules/iam/aws"
@@ -271,6 +277,7 @@ inputs = {
     "terraform-aws-ec2-instance/master"     = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-ecs/master"              = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-elb/master"              = local.branch_protections["terraform-aws-*/master"]
+    "terraform-aws-eventbridge/master"      = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-iam/master"              = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-key-pair/master"         = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-lambda/master"           = local.branch_protections["terraform-aws-*/master"]
@@ -328,6 +335,7 @@ inputs = {
     "triage-supporters/terraform-aws-ecs"              = "triage"
     "triage-supporters/terraform-aws-elb"              = "triage"
     "triage-supporters/terraform-aws-eks"              = "triage"
+    "triage-supporters/terraform-aws-eventbridge"      = "triage"
     "triage-supporters/terraform-aws-iam"              = "triage"
     "triage-supporters/terraform-aws-key-pair"         = "triage"
     "triage-supporters/terraform-aws-lambda"           = "triage"
@@ -362,6 +370,7 @@ inputs = {
     "triage-supporters/dpiddock"            = "member"
     "triage-supporters/DrFaust92"           = "member"
     "triage-supporters/tfhartmann"          = "member"
+    "triage-supporters/svenlito"            = "member"
   }
 
   members = [
@@ -372,6 +381,7 @@ inputs = {
     "dpiddock",
     "DrFaust92",
     "tfhartmann",
+    "svenlito",
   ]
 
   admins = ["antonbabenko"]
