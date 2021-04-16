@@ -8,20 +8,6 @@ include {
 
 locals {
   branch_protections = {
-    "terraform-aws-eks/master" = {
-      required_status_checks = {
-        contexts = [
-          "Code Format",
-          "Docs",
-          "TFLint",
-          "Validate",
-          "WIP",
-          "Minimum version check",
-          "Semantic Pull Request"
-        ]
-      }
-    }
-
     "terraform-aws-*/master" = {
       required_status_checks = {
         contexts = [
@@ -259,9 +245,6 @@ inputs = {
   }
 
   branch_protections = {
-    // EKS is a bit different (still)
-    "terraform-aws-eks/master" = local.branch_protections["terraform-aws-eks/master"]
-
     // All repos are having the same requirements
     "terraform-aws-acm/master"              = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-alb/master"              = local.branch_protections["terraform-aws-*/master"]
@@ -276,6 +259,7 @@ inputs = {
     "terraform-aws-ebs-optimized/master"    = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-ec2-instance/master"     = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-ecs/master"              = local.branch_protections["terraform-aws-*/master"]
+    "terraform-aws-eks/master"              = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-elb/master"              = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-eventbridge/master"      = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-iam/master"              = local.branch_protections["terraform-aws-*/master"]
@@ -371,6 +355,7 @@ inputs = {
     "triage-supporters/DrFaust92"           = "member"
     "triage-supporters/tfhartmann"          = "member"
     "triage-supporters/svenlito"            = "member"
+    "triage-supporters/nitrocode"           = "member"
   }
 
   members = [
@@ -382,6 +367,7 @@ inputs = {
     "DrFaust92",
     "tfhartmann",
     "svenlito",
+    "nitrocode",
   ]
 
   admins = ["antonbabenko"]
