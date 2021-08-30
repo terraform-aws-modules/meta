@@ -46,11 +46,6 @@ inputs = {
       description = "Something isn't working"
     }
 
-    "duplicate" = {
-      color       = "cfd3d7"
-      description = "This issue or pull request already exists"
-    }
-
     "documentation" = {
       color       = "0075ca"
       description = "Improvements or additions to documentation"
@@ -69,11 +64,6 @@ inputs = {
     "help wanted" = {
       color       = "008672"
       description = "Extra attention is needed"
-    }
-
-    "invalid" = {
-      color       = "e4e669"
-      description = "This doesn't seem right"
     }
 
     "on hold" = {
@@ -99,6 +89,11 @@ inputs = {
     "needs triage" = {
       color       = "f47a99"
       description = "Needs help with triage"
+    }
+
+    "needs update" = {
+      color       = "cfd3d7"
+      description = "Needs updates"
     }
 
     "upstream blocker" = {
