@@ -1,5 +1,5 @@
 terraform {
-  source = "${path_relative_from_include()}/../modules/githubfiles"
+  source = "${path_relative_from_include()}/../modules/github"
 }
 
 include {

@@ -11,7 +11,7 @@ variable "repository" {
 variable "branch" {
   description = "Branch name"
   type        = string
-  default     = ""
+  default     = "master"
 }
 
 variable "static_files" {
@@ -22,6 +22,12 @@ variable "static_files" {
 
 variable "dynamic_files" {
   description = "Map of dynamic files to manage in repo (generated from templates)"
+  type        = map(any)
+  default     = {}
+}
+
+variable "labels" {
+  description = "Map of Github issue labels (`label => color` or `label => { color, description }`)"
   type        = map(any)
   default     = {}
 }

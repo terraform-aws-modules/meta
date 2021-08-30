@@ -1,12 +1,12 @@
 terraform {
-  required_version = ">= 0.12.23"
-  //
-  //  required_providers {
-  //    githubfile = {
-  //      source  = "local.betajob.com/form3tech-oss/githubfile"
-  //      version = "1.1.0"
-  //    }
-  //  }
+  required_version = "~> 1.0"
+
+  required_providers {
+    github = {
+      source  = "integrations/github"
+      version = "~> 4.0"
+    }
+  }
 }
 
 locals {
@@ -22,3 +22,12 @@ locals {
 //  path             = lookup(each.value, "dest")
 //  contents         = file("${var.files_dir}${lookup(each.value, "src")}")
 //}
+
+resource "github_issue_label" "this" {
+  for_each = var.labels
+
+  repository  = split("/", var.repository)[1]
+  name        = each.key
+  color       = trimprefix(try(each.value.color, each.value), "#")
+  description = try(each.value.description, null)
+}

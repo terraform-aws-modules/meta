@@ -1,6 +1,6 @@
-# Files in GitHub repositories
+# GitHub repositories
 
-Files in GitHub repositories can be managed with this module.
+Settings and Files in GitHub repositories can be managed with this module.
 
 ## Usage
 
@@ -17,11 +17,14 @@ $ terraform apply
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.12.23 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.0 |
+| <a name="requirement_github"></a> [github](#requirement\_github) | ~> 4.0 |
 
 ## Providers
 
-No providers.
+| Name | Version |
+|------|---------|
+| <a name="provider_github"></a> [github](#provider\_github) | ~> 4.0 |
 
 ## Modules
 
@@ -29,15 +32,18 @@ No modules.
 
 ## Resources
 
-No resources.
+| Name | Type |
+|------|------|
+| [github_issue_label.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/issue_label) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_branch"></a> [branch](#input\_branch) | Branch name | `string` | `""` | no |
+| <a name="input_branch"></a> [branch](#input\_branch) | Branch name | `string` | `"master"` | no |
 | <a name="input_dynamic_files"></a> [dynamic\_files](#input\_dynamic\_files) | Map of dynamic files to manage in repo (generated from templates) | `map(any)` | `{}` | no |
 | <a name="input_files_dir"></a> [files\_dir](#input\_files\_dir) | Path to files directory | `string` | n/a | yes |
+| <a name="input_labels"></a> [labels](#input\_labels) | Map of Github issue labels (`label => color` or `label => { color, description }`) | `map(any)` | `{}` | no |
 | <a name="input_repository"></a> [repository](#input\_repository) | Repository owner/name | `string` | n/a | yes |
 | <a name="input_static_files"></a> [static\_files](#input\_static\_files) | Map of static files to manage in repo | `map(any)` | `{}` | no |
 
