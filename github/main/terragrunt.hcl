@@ -349,25 +349,25 @@ inputs = {
 
     "triage-supporters/barryib"             = "member"
     "triage-supporters/max-rocket-internet" = "member"
-    "triage-supporters/brandonjbjelland"    = "member"
     "triage-supporters/bryantbiggs"         = "member"
     "triage-supporters/dpiddock"            = "member"
     "triage-supporters/DrFaust92"           = "member"
     "triage-supporters/tfhartmann"          = "member"
     "triage-supporters/svenlito"            = "member"
     "triage-supporters/nitrocode"           = "member"
+    "triage-supporters/daroga0002"          = "member"
   }
 
   members = [
     "barryib",
     "max-rocket-internet",
-    "brandonjbjelland",
     "bryantbiggs",
     "dpiddock",
     "DrFaust92",
     "tfhartmann",
     "svenlito",
     "nitrocode",
+    "daroga0002",
   ]
 
   admins = ["antonbabenko"]
