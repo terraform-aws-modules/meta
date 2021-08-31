@@ -34,4 +34,22 @@ inputs = {
     }
 
   }
+
+  labels = {
+    "breaking change"  = "836d0f"
+    "bug"              = "d73a4a"
+    "documentation"    = "0075ca"
+    "enhancement"      = "a2eeef"
+    "good first issue" = "7057ff"
+    "help wanted"      = "008672"
+    "needs triage"     = "f7f36d"
+    "needs update"     = "feb64e"
+    "on hold"          = "f9d0c4"
+    "question"         = "d876e3"
+    "stale"            = "ffffff"
+    "upstream blocker" = "cdda25"
+    "waiting response" = "790a87"
+    "wip"              = "a5f7a7"
+    "wontfix"          = "ffffff"
+  }
 }

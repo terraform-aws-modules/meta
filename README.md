@@ -6,14 +6,14 @@ This repository contains Terraform configurations for all Terraform modules mana
 ## What exactly is managed here?
 
 1. [GitHub resources](https://github.com/terraform-aws-modules/meta/tree/master/github/main):
-    - Repositories
+    - Repositories (with issue labels)
     - Branch protections (status checks, pull-request reviews, restrictions)
     - Teams
     - Team repositories
     - Team memberships
     - Organization memberships (admins and members)
 
-2. [Common files in GitHub repositories](https://github.com/terraform-aws-modules/meta/tree/master/github/repositories):
+2. [Common files in GitHub repositories](https://github.com/terraform-aws-modules/meta/tree/master/github/repositories) is disabled. Should update to use [github_repository_file](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository_file) instead of `githubfile` provider:
     - .pre-commit-hooks.yml
     - .github issues and PR templates
     - CODEOWNERS
@@ -35,11 +35,10 @@ Ideally, individual Terraform module repository should contain only Terraform co
 
 ## Pre-requirements
 
-- [Terraform 0.12+](https://github.com/hashicorp/terraform)
-- [Terragrunt 0.23+](https://terragrunt.gruntwork.io/)
-- [Terraform Docs](https://github.com/segmentio/terraform-docs)
+- [Terraform 1.0+](https://github.com/hashicorp/terraform)
+- [Terragrunt 0.31+](https://terragrunt.gruntwork.io/)
+- [Terraform Docs](https://github.com/terraform-docs/terraform-docs)
 - [pre-commit hooks](http://pre-commit.com)
-- [githubfile](https://github.com/form3tech-oss/terraform-provider-githubfile) Terraform provider (compile and install manually)
 
 If you are using Mac, you can install all dependencies using Homebrew:
 
@@ -67,11 +66,13 @@ Give [SecretHub.io](https://secrethub.io/) a try if you are tired of struggling 
 
 ### Manage files in all repositories (not supported):
 
-Currently it is not well implemented here yet. Due to a large amount of API calls to GitHub and inability of terragrunt to limit execution to a single process.
+Currently, it is not well implemented still. Due to a large amount of API calls to GitHub and inability of terragrunt to limit execution to a single process.
  
     $ cd github/repositories
-    $ terragrunt plan-all    # <- it is a good idea to see changes :)
-    $ terragrunt apply-all
+    $ terragrunt run-all plan    # <- it is a good idea to see changes :)
+    $ terragrunt run-all apply
+
+There is a simple script to run commands in a loop - `scripts/update_repo_files.sh`.
 
 
 ## Ideas for later

@@ -3,8 +3,9 @@ terraform {
     commands = get_terraform_commands_that_need_vars()
 
     env_vars = {
-      GITHUB_TOKEN        = trimspace(run_cmd("--terragrunt-quiet", "secrethub", "read", "betajob/terraform-aws-modules/github/token"))
-      GITHUB_ORGANIZATION = "terraform-aws-modules"
+      GITHUB_TOKEN = trimspace(run_cmd("--terragrunt-quiet", "secrethub", "read", "betajob/terraform-aws-modules/github/token"))
+      #      GITHUB_ORGANIZATION = "terraform-aws-modules"
+      GITHUB_OWNER = "terraform-aws-modules"
     }
   }
 
@@ -40,12 +41,5 @@ generate "main_providers" {
   if_exists = "overwrite"
   contents  = <<EOF
 provider "github" {}
-
-// githubfile provider is not available in the registry, yet
-//provider "githubfile" {
-//  github_username = "betajobot"
-//  github_email    = "anton+betajobot@antonbabenko.com"
-//  commit_message_prefix = "[ci skip] "
-//}
 EOF
 }

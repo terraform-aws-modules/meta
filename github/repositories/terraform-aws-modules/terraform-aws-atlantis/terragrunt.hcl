@@ -1,5 +1,5 @@
 terraform {
-  source = "${path_relative_from_include()}/../modules/githubfiles"
+  source = "${path_relative_from_include()}/../modules/github"
 }
 
 include {
@@ -11,6 +11,8 @@ locals {
 }
 
 inputs = {
+
+  labels = local.common_vars.inputs.labels
 
   static_files = local.common_vars.inputs.static_files
 
