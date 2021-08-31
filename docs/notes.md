@@ -39,8 +39,7 @@ YouTube Playlist - [https://www.youtube.com/playlist?list=PLvz1V_9d3uiufsJF6Romw
 * [Thierno](https://github.com/barryib)
 
 ### Decisions (Actions Plan):
-1. Use `pre-commit run` inside of GH 
-   Action workflow instead of separate commands (like validate, fmt, docs, tflint, etc). @bryantbiggs
+1. Use `pre-commit run` inside of GH Action workflow instead of separate commands (like validate, fmt, docs, tflint, etc). @bryantbiggs
 2. Put GH Actions by Bryant into a less active module than VPC (to not notify all watchers every time we run something during development&tests). Use terraform-aws-lambda module where we have just 7 watchers and less activity, but it is very complex, too. @bryantbiggs
 3. Keep using git-chglog since nobody wants to work on a replacement implementation.
 4. Terraform versions support by the modules:
