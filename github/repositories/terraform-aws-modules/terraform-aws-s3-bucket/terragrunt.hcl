@@ -12,6 +12,8 @@ locals {
 
 inputs = {
 
+  labels = local.common_vars.inputs.labels
+
   static_files = local.common_vars.inputs.static_files
 
   ##############################

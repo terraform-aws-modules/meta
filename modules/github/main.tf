@@ -28,6 +28,6 @@ resource "github_issue_label" "this" {
 
   repository  = split("/", var.repository)[1]
   name        = each.key
-  color       = trimprefix(try(each.value.color, each.value), "#")
+  color       = lower(trimprefix(try(each.value.color, each.value), "#"))
   description = try(each.value.description, null)
 }

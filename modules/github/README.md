@@ -43,7 +43,7 @@ No modules.
 | <a name="input_branch"></a> [branch](#input\_branch) | Branch name | `string` | `"master"` | no |
 | <a name="input_dynamic_files"></a> [dynamic\_files](#input\_dynamic\_files) | Map of dynamic files to manage in repo (generated from templates) | `map(any)` | `{}` | no |
 | <a name="input_files_dir"></a> [files\_dir](#input\_files\_dir) | Path to files directory | `string` | n/a | yes |
-| <a name="input_labels"></a> [labels](#input\_labels) | Map of Github issue labels (`label => color` or `label => { color, description }`) | `map(any)` | `{}` | no |
+| <a name="input_labels"></a> [labels](#input\_labels) | Map of Github issue labels (`label => color` or `label => { color, description }`) | `any` | `{}` | no |
 | <a name="input_repository"></a> [repository](#input\_repository) | Repository owner/name | `string` | n/a | yes |
 | <a name="input_static_files"></a> [static\_files](#input\_static\_files) | Map of static files to manage in repo | `map(any)` | `{}` | no |
 

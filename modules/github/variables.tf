@@ -28,6 +28,6 @@ variable "dynamic_files" {
 
 variable "labels" {
   description = "Map of Github issue labels (`label => color` or `label => { color, description }`)"
-  type        = map(any)
+  type        = any
   default     = {}
 }
