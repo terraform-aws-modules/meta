@@ -9,9 +9,9 @@ terraform {
   }
 }
 
-locals {
-  clean_static_files = { for k, v in var.static_files : k => v if v != null }
-}
+# locals {
+#   clean_static_files = { for k, v in var.static_files : k => v if v != null }
+# }
 
 # resource "githubfile_file" "static" {
 #   for_each = local.clean_static_files

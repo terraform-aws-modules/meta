@@ -17,14 +17,14 @@ $ terraform apply
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.12.23 |
-| <a name="requirement_github"></a> [github](#requirement\_github) | ~> 2.4 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.0 |
+| <a name="requirement_github"></a> [github](#requirement\_github) | ~> 4.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_github"></a> [github](#provider\_github) | ~> 2.4 |
+| <a name="provider_github"></a> [github](#provider\_github) | ~> 4.0 |
 
 ## Modules
 
@@ -34,13 +34,13 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [github_branch_protection.this](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/branch_protection) | resource |
-| [github_membership.admins](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/membership) | resource |
-| [github_membership.members](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/membership) | resource |
-| [github_repository.this](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/repository) | resource |
-| [github_team.this](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/team) | resource |
-| [github_team_membership.this](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/team_membership) | resource |
-| [github_team_repository.this](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/team_repository) | resource |
+| [github_branch_protection.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/branch_protection) | resource |
+| [github_membership.admins](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/membership) | resource |
+| [github_membership.members](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/membership) | resource |
+| [github_repository.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository) | resource |
+| [github_team.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/team) | resource |
+| [github_team_membership.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/team_membership) | resource |
+| [github_team_repository.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/team_repository) | resource |
 
 ## Inputs
 

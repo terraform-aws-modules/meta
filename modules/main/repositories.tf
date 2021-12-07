@@ -1,8 +1,8 @@
 locals {
-  /* Useful helpers */
-  list_cmd   = [for k in keys(var.repositories) : "mkdir \"${k}\""]
-  full_cmd   = join("\n", local.list_cmd)
-  full_repos = join("\n", keys(var.repositories))
+  # Useful helpers
+  # list_cmd = [for k in keys(var.repositories) : "mkdir \"${k}\""]
+  # full_cmd   = join("\n", local.list_cmd)
+  # full_repos = join("\n", keys(var.repositories))
 }
 
 ###############
@@ -14,7 +14,7 @@ resource "github_repository" "this" {
   name          = each.key
   description   = lookup(each.value, "description", null)
   homepage_url  = lookup(each.value, "homepage_url", null)
-  private       = lookup(each.value, "private", false)
+  visibility    = lookup(each.value, "visibility", "public")
   has_issues    = lookup(each.value, "has_issues", true)
   has_projects  = lookup(each.value, "has_projects", false)
   has_wiki      = lookup(each.value, "has_wiki", false)
@@ -35,8 +35,8 @@ resource "github_repository" "this" {
 resource "github_branch_protection" "this" {
   for_each = var.branch_protections
 
-  repository = github_repository.this[split("/", each.key)[0]].name
-  branch     = split("/", each.key)[1]
+  repository_id = github_repository.this[each.key].node_id
+  pattern       = "master"
 
   enforce_admins         = lookup(each.value, "enforce_admins", false)
   require_signed_commits = lookup(each.value, "require_signed_commits", false)
@@ -55,19 +55,10 @@ resource "github_branch_protection" "this" {
 
     content {
       dismiss_stale_reviews           = lookup(required_pull_request_reviews.value, "dismiss_stale_reviews", false)
-      dismissal_users                 = lookup(required_pull_request_reviews.value, "dismissal_users", null)
-      dismissal_teams                 = lookup(required_pull_request_reviews.value, "dismissal_teams", null)
+      restrict_dismissals             = lookup(required_pull_request_reviews.value, "restrict_dismissals", null)
+      dismissal_restrictions          = lookup(required_pull_request_reviews.value, "dismissal_restrictions", null)
       require_code_owner_reviews      = lookup(required_pull_request_reviews.value, "require_code_owner_reviews", false)
       required_approving_review_count = lookup(required_pull_request_reviews.value, "required_approving_review_count", null)
-    }
-  }
-
-  dynamic "restrictions" {
-    for_each = length(keys(lookup(each.value, "restrictions", {}))) == 0 ? [] : [lookup(each.value, "restrictions", {})]
-
-    content {
-      users = lookup(restrictions.value, "users", null)
-      teams = lookup(restrictions.value, "teams", null)
     }
   }
 }
