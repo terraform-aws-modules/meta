@@ -1,3 +1,19 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+# [0.9.0](https://github.com/terraform-aws-modules/meta/compare/v0.8.0...v0.9.0) (2021-12-07)
+
+
+### Bug Fixes
+
+* update repository to align with current standards ([#26](https://github.com/terraform-aws-modules/meta/issues/26)) ([0478736](https://github.com/terraform-aws-modules/meta/commit/0478736c8359fd48154f2a133a562936e80c2f6e))
+
+
+### Features
+
+* correct linting errors and add `.releaserc.json` file to fix release process ([#28](https://github.com/terraform-aws-modules/meta/issues/28)) ([0e4e8b5](https://github.com/terraform-aws-modules/meta/commit/0e4e8b52890c4c8f9e952f2e4e7269df44d58e24))
+
 <a name="v0.8.0"></a>
 ## [v0.8.0] - 2021-08-31
 
