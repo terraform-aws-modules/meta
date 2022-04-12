@@ -1,6 +1,22 @@
-# GitHub repositories
+# GitHub repositories and static files
 
 Settings and Files in GitHub repositories can be managed with this module.
+
+## Static files flow
+
+1. Read existing files and find if there should be any changes
+2. If there are changes:
+   1. Make branch => commit => open PR
+   2. Merge PR (outside of this repo, manually)
+   3. Run `terragrunt state rm` to delete information about these files and PR from the state-file.
+
+```
+terragrunt apply
+# terragrunt state list -id=github_repository_file.updates
+ -id=github_repository_pull_request.updates
+terragrunt state rm 'github_repository_file.updates' 'github_repository_pull_request.updates'
+```
+
 
 ## Usage
 
