@@ -47,6 +47,7 @@ resource "github_branch_protection" "this" {
 
   enforce_admins         = lookup(each.value, "enforce_admins", false)
   require_signed_commits = lookup(each.value, "require_signed_commits", false)
+  allows_force_pushes    = lookup(each.value, "allows_force_pushes", false)
 
   dynamic "required_status_checks" {
     for_each = [lookup(each.value, "required_status_checks", {})]

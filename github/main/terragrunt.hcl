@@ -12,7 +12,15 @@ locals {
       required_status_checks = {
         contexts = [
           "WIP",
-          #          "Semantic Pull Request"
+        ]
+      }
+    }
+
+    "terraform-aws-meta/master" = {
+      allows_force_pushes = true # just for local development
+      required_status_checks = {
+        contexts = [
+          "WIP",
         ]
       }
     }
@@ -281,7 +289,7 @@ inputs = {
     "terraform-aws-vpc/master"              = local.branch_protections["terraform-aws-*/master"]
     "terraform-aws-vpn-gateway/master"      = local.branch_protections["terraform-aws-*/master"]
 
-    "meta/master" = local.branch_protections["terraform-aws-*/master"]
+    "meta/master" = local.branch_protections["terraform-aws-meta/master"]
   }
 
   ########
@@ -289,10 +297,7 @@ inputs = {
   ########
   # Privacy = {closed, secret}
   teams = {
-    aws-eks = {
-      privacy = "closed"
-    }
-    aws-dynamodb-table = {
+    maintainers = {
       privacy = "closed"
     }
     triage-supporters = {
@@ -302,8 +307,40 @@ inputs = {
 
   # Team/Repository = {pull, triage, push, maintain, admin}
   team_repositories = {
-    "aws-eks/terraform-aws-eks"                       = "admin"
-    "aws-dynamodb-table/terraform-aws-dynamodb-table" = "admin"
+    "maintainers/terraform-aws-acm"              = "maintain"
+    "maintainers/terraform-aws-alb"              = "maintain"
+    "maintainers/terraform-aws-apigateway-v2"    = "maintain"
+    "maintainers/terraform-aws-appsync"          = "maintain"
+    "maintainers/terraform-aws-atlantis"         = "maintain"
+    "maintainers/terraform-aws-autoscaling"      = "maintain"
+    "maintainers/terraform-aws-cloudfront"       = "maintain"
+    "maintainers/terraform-aws-cloudwatch"       = "maintain"
+    "maintainers/terraform-aws-customer-gateway" = "maintain"
+    "maintainers/terraform-aws-dynamodb-table"   = "maintain"
+    "maintainers/terraform-aws-ebs-optimized"    = "maintain"
+    "maintainers/terraform-aws-ec2-instance"     = "maintain"
+    "maintainers/terraform-aws-ecs"              = "maintain"
+    "maintainers/terraform-aws-elb"              = "maintain"
+    "maintainers/terraform-aws-eks"              = "maintain"
+    "maintainers/terraform-aws-eventbridge"      = "maintain"
+    "maintainers/terraform-aws-iam"              = "maintain"
+    "maintainers/terraform-aws-key-pair"         = "maintain"
+    "maintainers/terraform-aws-lambda"           = "maintain"
+    "maintainers/terraform-aws-notify-slack"     = "maintain"
+    "maintainers/terraform-aws-pricing"          = "maintain"
+    "maintainers/terraform-aws-rds"              = "maintain"
+    "maintainers/terraform-aws-rds-aurora"       = "maintain"
+    "maintainers/terraform-aws-redshift"         = "maintain"
+    "maintainers/terraform-aws-route53"          = "maintain"
+    "maintainers/terraform-aws-s3-bucket"        = "maintain"
+    "maintainers/terraform-aws-security-group"   = "maintain"
+    "maintainers/terraform-aws-sns"              = "maintain"
+    "maintainers/terraform-aws-sqs"              = "maintain"
+    "maintainers/terraform-aws-step-functions"   = "maintain"
+    "maintainers/terraform-aws-transit-gateway"  = "maintain"
+    "maintainers/terraform-aws-vpc"              = "maintain"
+    "maintainers/terraform-aws-vpn-gateway"      = "maintain"
+    "maintainers/meta"                           = "maintain"
 
     "triage-supporters/terraform-aws-acm"              = "triage"
     "triage-supporters/terraform-aws-alb"              = "triage"
@@ -343,10 +380,7 @@ inputs = {
 
   # Role = {member, maintainer}
   team_memberships = {
-    "aws-eks/barryib"                        = "member"
-    "aws-eks/max-rocket-internet"            = "member"
-    "aws-eks/dpiddock"                       = "member"
-    "aws-dynamodb-table/max-rocket-internet" = "member"
+    "maintainers/bryantbiggs" = "member"
 
     "triage-supporters/barryib"             = "member"
     "triage-supporters/max-rocket-internet" = "member"
