@@ -32,7 +32,10 @@ resource "github_repository" "this" {
   topics = sort(lookup(each.value, "topics", []))
 
   lifecycle {
-    ignore_changes = [branches]
+    ignore_changes = [
+      branches,
+      template, # 21.4.2022 - open bug https://github.com/integrations/terraform-provider-github/issues/930
+    ]
   }
 }
 
